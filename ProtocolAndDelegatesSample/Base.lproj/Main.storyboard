@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ha4-8O-MKZ">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!--Parent-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="ProtocolAndDelegatesSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rut-uK-vgc">
+                                <rect key="frame" x="284" y="289" width="32" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Rut-uK-vgc" secondAttribute="centerX" id="ofx-5h-dV3"/>
+                            <constraint firstAttribute="centerY" secondItem="Rut-uK-vgc" secondAttribute="centerY" id="xRE-33-btb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Parent" id="EBp-cI-Teb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gBD-Ct-qVN">
+                            <connections>
+                                <segue destination="AsH-Sz-q7S" kind="show" identifier="addNewText" id="iMI-yO-bWX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dataLabel" destination="Rut-uK-vgc" id="bO8-lQ-Ntq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1132" y="996"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="yvL-yK-Gjq">
+            <objects>
+                <viewController id="AsH-Sz-q7S" customClass="SecondViewController" customModule="ProtocolAndDelegatesSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cTW-7L-gmO"/>
+                        <viewControllerLayoutGuide type="bottom" id="EbL-mV-zH2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dvd-zS-6Ze">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvD-ha-RQB">
+                                <rect key="frame" x="258" y="285" width="85" height="30"/>
+                                <state key="normal" title="Embed Data">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendData:" destination="AsH-Sz-q7S" eventType="touchUpInside" id="K8r-vk-GYY"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X5Z-hS-V1H">
+                                <rect key="frame" x="258" y="194" width="85" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jvD-ha-RQB" firstAttribute="top" secondItem="X5Z-hS-V1H" secondAttribute="bottom" constant="61" id="Fk1-dP-AKP"/>
+                            <constraint firstAttribute="centerX" secondItem="jvD-ha-RQB" secondAttribute="centerX" id="I3d-1V-Zbv"/>
+                            <constraint firstAttribute="centerY" secondItem="jvD-ha-RQB" secondAttribute="centerY" id="azb-mF-b1X"/>
+                            <constraint firstItem="X5Z-hS-V1H" firstAttribute="leading" secondItem="jvD-ha-RQB" secondAttribute="leading" id="cu7-1G-jz9"/>
+                            <constraint firstItem="X5Z-hS-V1H" firstAttribute="trailing" secondItem="jvD-ha-RQB" secondAttribute="trailing" id="uGR-Cg-qbM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dataTextField" destination="X5Z-hS-V1H" id="wti-h2-7gg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qyM-w3-r5P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1855" y="949"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xan-CN-aAU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ha4-8O-MKZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7w9-hg-L6Y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="bt4-QQ-e9U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1nI-a0-Nnu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="341" y="1068"/>
+        </scene>
+    </scenes>
+</document>
